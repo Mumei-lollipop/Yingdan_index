@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>曾伟浩 · 个人主页</title>
+    <meta name="description" content="曾伟浩的个人网页：简介、项目与联系方式" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="主导航">
+        <a class="brand" href="#top">ZW AO</a>
+        <button class="nav-toggle" aria-controls="site-menu" aria-expanded="false">菜单</button>
+        <ul id="site-menu" class="menu">
+          <li><a href="#about">关于</a></li>
+          <li><a href="#projects">项目</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <h1>你好，我是 <span class="highlight">曾伟浩</span></h1>
+        <p class="subtitle">专注于高质量的网页体验与简洁的工程实践。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">查看项目</a>
+          <a class="button" href="#contact">联系我</a>
+        </div>
+      </section>
+
+      <section id="about" class="section container">
+        <h2>关于我</h2>
+        <p>
+          我热衷于将想法快速、可靠且优雅地落地为产品。擅长前端开发、组件化与性能优化，
+          喜欢以数据与用户反馈驱动迭代，追求简洁可维护的代码与清晰的交互体验。
+        </p>
+        <ul class="tags" aria-label="技能标签">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>响应式设计</li>
+          <li>性能优化</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2>项目</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>个人主页</h3>
+            <p>本页即为示例：简约设计、良好可读性与移动端优先。</p>
+            <div class="card-actions">
+              <a class="button small" href="#top">预览</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>组件库探索</h3>
+            <p>基于设计令牌的轻量组件样式探索，强调可定制与一致性。</p>
+            <div class="card-actions">
+              <a class="button small" href="#">了解更多</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>性能优化实践</h3>
+            <p>针对实际页面的加载性能与交互优化，减少阻塞与重排。</p>
+            <div class="card-actions">
+              <a class="button small" href="#">了解更多</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section container">
+        <h2>联系我</h2>
+        <p>欢迎通过以下方式与我取得联系：</p>
+        <ul class="contact-list">
+          <li>邮箱：<a href="mailto:example@example.com">example@example.com</a></li>
+          <li>微信：<span>zwh-demo</span></li>
+          <li>GitHub：<a href="https://github.com/" target="_blank" rel="noopener">github.com</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> 曾伟浩. 保留所有权利。</p>
+      </div>
+    </footer>
+
+    <script>
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.getElementById('site-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('open');
+        });
+      }
+    </script>
+  </body>
+  </html>
+
+
+
+
